@@ -33,6 +33,7 @@ In her bakery:
 ### Blocks of OOP
 - **Classes and Objects:**
   - **Class:** A class in programming is a blueprint or template for creating objects. It defines the properties (attributes) and behaviors (methods) that the objects created from it will have. Think of a class like a recipe that outlines what ingredients (attributes) are needed and what steps (methods) to follow.
+  - **Object:** Once a class is defined, objects can be created (instantiated) from it using the new keyword followed by the class name and constructor arguments.
 
 #### Example of a Class in Java:
 ```java
@@ -53,3 +54,9 @@ class Cake {
         System.out.println("Baking a " + flavor + " cake.");
     }
 }
+class Main{
+  public static void main(String[] args){
+      Cake c1 = new Cake();//Object creation
+  }
+}
+
