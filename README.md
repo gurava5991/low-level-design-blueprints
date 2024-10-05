@@ -60,31 +60,137 @@ class Main{
   }
 }
 ```
-- **Constructors**
-  - **Defination Of Constructor :**  A constructor in object-oriented programming is a special type of method that is automatically called when an object of a class is created. Its primary purpose is to initialize the object's state, i.e., to assign values to the object's attributes (fields).
-  - **Rules of constructors:**
-    **Same Name as Class:** A constructor must have the same name as the class.</br>
-    **No Return Type:** A constructor does not have a return type, not even void.</br>
-    **Automatically Invoked:** Constructors are called automatically when an object is created using the new keyword.</br>
-    **Can Be Overloaded:** A class can have multiple constructors with different parameters (constructor overloading).</br>
-    **Cannot Be Inherited:** Constructors are not inherited by subclasses but can be called using super().</br>
+## 1. **What is a Constructor?**
+A **constructor** in object-oriented programming is a special method used to initialize objects. It is automatically called when an object is created. Constructors typically set initial values for object attributes.
 
-  - **Types of Constructors**
-    - **Default Constructor:**
-    - If no constructor is explicitly defined, Java provides a default constructor.
-    - This constructor takes no parameters and assigns default values to object attributes (like null for objects, 0 for numeric types).
-    - ```java
-      class Car {
-          String model;
-          int year;
-      }
+## 2. **Rules for Constructors:**
+- The constructor must have the same name as the class.
+- It does not have any return type (not even `void`).
+- It is called automatically when an object is created.
+- A class can have multiple constructors (overloading).
+- Constructors are not inherited.
+
+## 3. **Types of Constructors:**
+
+### a. **Default Constructor:**
+If no constructor is provided, Java supplies a default constructor. It initializes object attributes to their default values.
+
+```java
+class Car {
+    String model;
+    int year;
+}
+
+public class TestCar {
+    public static void main(String[] args) {
+        Car myCar = new Car();  // Default constructor
+        System.out.println(myCar.model);  // null
+        System.out.println(myCar.year);   // 0
+    }
+}
+```
+
+### b. **Parameterized Constructor:**
+A constructor that accepts arguments to initialize the object with specific values.
+
+```java
+class Car {
+    String model;
+    int year;
+
+    // Parameterized constructor
+    public Car(String model, int year) {
+        this.model = model;
+        this.year = year;
+    }
+}
+
+public class TestCar {
+    public static void main(String[] args) {
+        Car myCar = new Car("Toyota", 2022);  // Parameterized constructor
+        System.out.println(myCar.model);  // Toyota
+        System.out.println(myCar.year);   // 2022
+    }
+}
+```
+
+### c. **Copy Constructor:**
+A constructor that creates an object by copying another object of the same class.
+
+```java
+class Car {
+    String model;
+    int year;
+
+    // Parameterized constructor
+    public Car(String model, int year) {
+        this.model = model;
+        this.year = year;
+    }
+
+    // Copy constructor
+    public Car(Car car) {
+        this.model = car.model;
+        this.year = car.year;
+    }
+}
+
+public class TestCar {
+    public static void main(String[] args) {
+        Car myCar = new Car("Honda", 2023);  // Parameterized constructor
+        Car copyCar = new Car(myCar);        // Copy constructor
+        System.out.println(copyCar.model);   // Honda
+        System.out.println(copyCar.year);    // 2023
+    }
+}
+```
+
+## 4. **Constructor Chaining:**
+
+Constructor chaining is when one constructor calls another within the same class or between a subclass and superclass using `this()` or `super()`.
+
+### a. **Chaining in the Same Class**:
+```java
+class Car {
+    String model;
+    int year;
+
+    // Constructor 1
+    public Car() {
+        this("Unknown", 0);  // Calls Constructor 2
+    }
+
+    // Constructor 2
+    public Car(String model, int year) {
+        this.model = model;
+        this.year = year;
+    }
+}
+```
+
+### b. **Chaining Between Superclass and Subclass**:
+```java
+class Vehicle {
+    String type;
+
+    public Vehicle(String type) {
+        this.type = type;
+    }
+}
+
+class Car extends Vehicle {
+    String model;
+
+    public Car(String model) {
+        super("Car");  // Calls the superclass constructor
+        this.model = model;
+    }
+}
+```
+
+## 5. **Key Points on Constructor Chaining:**
+- The first statement in a constructor must be a call to `this()` (another constructor in the same class) or `super()` (the superclass constructor).
+- Constructor chaining ensures that each level in the class hierarchy is initialized properly.
+
       
-      public class TestCar {
-          public static void main(String[] args) {
-              Car myCar = new Car();  // Default constructor called
-              System.out.println(myCar.model);  // null
-              System.out.println(myCar.year);   // 0
-          }
-      }
-      ```
 
