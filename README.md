@@ -1,11 +1,15 @@
 # low-level-design-blueprints
+
 ## Table of Contents
-- [OOP](#Object Oriendted Programming)
-  - [Blocks of OOP's](#Blocks of OOP's)
-  - [Pillars Of OOP's](#Pillars Of OOP's)
+- [Object-Oriented Programming](#object-oriented-programming)
+  - [Blocks of OOP](#blocks-of-oop)
+  - [Pillars of OOP](#pillars-of-oop)
 
-## Object Oriendted Programming
-some content
+## Object-Oriented Programming
+Some content.
 
-### Blocks of OOP's
-### Pillars Of OOP's
+### Blocks of OOP
+Some content.
+
+### Pillars of OOP
+Some content.
