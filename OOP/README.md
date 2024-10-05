@@ -19,7 +19,7 @@ In her bakery:
 ### Components of Object-Oriented Programming (OOP) in Low-Level Design (LLD)
 
 - **Classes:** A blueprint for creating objects. It defines attributes (data) and behaviors (methods). For example, a Car class may have attributes like make, model, and behaviors like start() or stop().
-  
+
 - **Objects:** Actual instances of classes. Each object has its own unique data and can perform actions. For instance, a specific Car object has a unique make and model and can start() or stop().
 
 - **Abstraction:** Simplifies complex systems by focusing on important details and hiding unnecessary information. For example, when interacting with a Car object, you don't need to know how the engine works internally—just the methods like start().
@@ -39,24 +39,24 @@ In her bakery:
 ```java
 // Defining a class named 'Cake'
 class Cake {
-    // Attributes (properties of the class)
-    String flavor;
-    double price;
+  // Attributes (properties of the class)
+  String flavor;
+  double price;
 
-    // Constructor to initialize the Cake objects
-    public Cake(String flavor, double price) {
-        this.flavor = flavor;
-        this.price = price;
-    }
+  // Constructor to initialize the Cake objects
+  public Cake(String flavor, double price) {
+    this.flavor = flavor;
+    this.price = price;
+  }
 
-    // Method (behavior of the class)
-    public void bake() {
-        System.out.println("Baking a " + flavor + " cake.");
-    }
+  // Method (behavior of the class)
+  public void bake() {
+    System.out.println("Baking a " + flavor + " cake.");
+  }
 }
 class Main{
   public static void main(String[] args){
-      Cake c1 = new Cake();//Object creation
+    Cake c1 = new Cake();//Object creation
   }
 }
 ```
@@ -77,16 +77,16 @@ If no constructor is provided, Java supplies a default constructor. It initializ
 
 ```java
 class Car {
-    String model;
-    int year;
+  String model;
+  int year;
 }
 
 public class TestCar {
-    public static void main(String[] args) {
-        Car myCar = new Car();  // Default constructor
-        System.out.println(myCar.model);  // null
-        System.out.println(myCar.year);   // 0
-    }
+  public static void main(String[] args) {
+    Car myCar = new Car();  // Default constructor
+    System.out.println(myCar.model);  // null
+    System.out.println(myCar.year);   // 0
+  }
 }
 ```
 
@@ -95,22 +95,22 @@ A constructor that accepts arguments to initialize the object with specific valu
 
 ```java
 class Car {
-    String model;
-    int year;
+  String model;
+  int year;
 
-    // Parameterized constructor
-    public Car(String model, int year) {
-        this.model = model;
-        this.year = year;
-    }
+  // Parameterized constructor
+  public Car(String model, int year) {
+    this.model = model;
+    this.year = year;
+  }
 }
 
 public class TestCar {
-    public static void main(String[] args) {
-        Car myCar = new Car("Toyota", 2022);  // Parameterized constructor
-        System.out.println(myCar.model);  // Toyota
-        System.out.println(myCar.year);   // 2022
-    }
+  public static void main(String[] args) {
+    Car myCar = new Car("Toyota", 2022);  // Parameterized constructor
+    System.out.println(myCar.model);  // Toyota
+    System.out.println(myCar.year);   // 2022
+  }
 }
 ```
 
@@ -119,29 +119,29 @@ A constructor that creates an object by copying another object of the same class
 
 ```java
 class Car {
-    String model;
-    int year;
+  String model;
+  int year;
 
-    // Parameterized constructor
-    public Car(String model, int year) {
-        this.model = model;
-        this.year = year;
-    }
+  // Parameterized constructor
+  public Car(String model, int year) {
+    this.model = model;
+    this.year = year;
+  }
 
-    // Copy constructor
-    public Car(Car car) {
-        this.model = car.model;
-        this.year = car.year;
-    }
+  // Copy constructor
+  public Car(Car car) {
+    this.model = car.model;
+    this.year = car.year;
+  }
 }
 
 public class TestCar {
-    public static void main(String[] args) {
-        Car myCar = new Car("Honda", 2023);  // Parameterized constructor
-        Car copyCar = new Car(myCar);        // Copy constructor
-        System.out.println(copyCar.model);   // Honda
-        System.out.println(copyCar.year);    // 2023
-    }
+  public static void main(String[] args) {
+    Car myCar = new Car("Honda", 2023);  // Parameterized constructor
+    Car copyCar = new Car(myCar);        // Copy constructor
+    System.out.println(copyCar.model);   // Honda
+    System.out.println(copyCar.year);    // 2023
+  }
 }
 ```
 
@@ -152,39 +152,39 @@ Constructor chaining is when one constructor calls another within the same class
 ### a. **Chaining in the Same Class**:
 ```java
 class Car {
-    String model;
-    int year;
+  String model;
+  int year;
 
-    // Constructor 1
-    public Car() {
-        this("Unknown", 0);  // Calls Constructor 2
-    }
+  // Constructor 1
+  public Car() {
+    this("Unknown", 0);  // Calls Constructor 2
+  }
 
-    // Constructor 2
-    public Car(String model, int year) {
-        this.model = model;
-        this.year = year;
-    }
+  // Constructor 2
+  public Car(String model, int year) {
+    this.model = model;
+    this.year = year;
+  }
 }
 ```
 
 ### b. **Chaining Between Superclass and Subclass**:
 ```java
 class Vehicle {
-    String type;
+  String type;
 
-    public Vehicle(String type) {
-        this.type = type;
-    }
+  public Vehicle(String type) {
+    this.type = type;
+  }
 }
 
 class Car extends Vehicle {
-    String model;
+  String model;
 
-    public Car(String model) {
-        super("Car");  // Calls the superclass constructor
-        this.model = model;
-    }
+  public Car(String model) {
+    super("Car");  // Calls the superclass constructor
+    this.model = model;
+  }
 }
 ```
 
@@ -204,24 +204,24 @@ Encapsulation is the process of wrapping data (variables) and methods (functions
 - **Example:**
 ```java
 class BankAccount {
-    private double balance;
+  private double balance;
 
-    // Constructor
-    public BankAccount(double balance) {
-        this.balance = balance;
-    }
+  // Constructor
+  public BankAccount(double balance) {
+    this.balance = balance;
+  }
 
-    // Public method to deposit money
-    public void deposit(double amount) {
-        if (amount > 0) {
-            balance += amount;
-        }
+  // Public method to deposit money
+  public void deposit(double amount) {
+    if (amount > 0) {
+      balance += amount;
     }
+  }
 
-    // Public method to get balance
-    public double getBalance() {
-        return balance;
-    }
+  // Public method to get balance
+  public double getBalance() {
+    return balance;
+  }
 }
 ```
 
@@ -237,30 +237,30 @@ Abstraction refers to the concept of exposing only the necessary parts of an obj
 - **Example:**
 ```java
 abstract class Shape {
-    // Abstract method for calculating area
-    abstract double calculateArea();
+  // Abstract method for calculating area
+  abstract double calculateArea();
 }
 
 class Circle extends Shape {
-    private double radius;
+  private double radius;
 
-    // Constructor
-    public Circle(double radius) {
-        this.radius = radius;
-    }
+  // Constructor
+  public Circle(double radius) {
+    this.radius = radius;
+  }
 
-    // Implementing abstract method
-    @Override
-    double calculateArea() {
-        return Math.PI * radius * radius;
-    }
+  // Implementing abstract method
+  @Override
+  double calculateArea() {
+    return Math.PI * radius * radius;
+  }
 }
 
 public class Main {
-    public static void main(String[] args) {
-        Shape shape = new Circle(5.0);
-        System.out.println("Area: " + shape.calculateArea());
-    }
+  public static void main(String[] args) {
+    Shape shape = new Circle(5.0);
+    System.out.println("Area: " + shape.calculateArea());
+  }
 }
 ```
 
@@ -275,32 +275,32 @@ Inheritance is a mechanism that allows one class to inherit fields and methods f
 - **Example:**
 ```java
 class Vehicle {
-    String make;
-    String model;
+  String make;
+  String model;
 
-    public Vehicle(String make, String model) {
-        this.make = make;
-        this.model = model;
-    }
+  public Vehicle(String make, String model) {
+    this.make = make;
+    this.model = model;
+  }
 
-    public void display() {
-        System.out.println("Vehicle: " + make + " " + model);
-    }
+  public void display() {
+    System.out.println("Vehicle: " + make + " " + model);
+  }
 }
 
 class Car extends Vehicle {
-    int year;
+  int year;
 
-    public Car(String make, String model, int year) {
-        super(make, model);  // Call the parent constructor
-        this.year = year;
-    }
+  public Car(String make, String model, int year) {
+    super(make, model);  // Call the parent constructor
+    this.year = year;
+  }
 
-    @Override
-    public void display() {
-        super.display();  // Call the parent method
-        System.out.println("Year: " + year);
-    }
+  @Override
+  public void display() {
+    super.display();  // Call the parent method
+    System.out.println("Year: " + year);
+  }
 }
 ```
 
@@ -315,23 +315,23 @@ Polymorphism allows one interface or method to be used for a general class of ac
 - **Example (Method Overriding):**
 ```java
 class Animal {
-    public void sound() {
-        System.out.println("Animal makes a sound");
-    }
+  public void sound() {
+    System.out.println("Animal makes a sound");
+  }
 }
 
 class Dog extends Animal {
-    @Override
-    public void sound() {
-        System.out.println("Dog barks");
-    }
+  @Override
+  public void sound() {
+    System.out.println("Dog barks");
+  }
 }
 
 public class Main {
-    public static void main(String[] args) {
-        Animal myDog = new Dog();
-        myDog.sound();  // Outputs: Dog barks
-    }
+  public static void main(String[] args) {
+    Animal myDog = new Dog();
+    myDog.sound();  // Outputs: Dog barks
+  }
 }
 ```
 
@@ -346,31 +346,31 @@ An interface in Java is a reference type, similar to a class, that can contain o
 - **Example:**
 ```java
 interface Animal {
-    void sound();  // Abstract method
+  void sound();  // Abstract method
 }
 
 class Cat implements Animal {
-    @Override
-    public void sound() {
-        System.out.println("Cat meows");
-    }
+  @Override
+  public void sound() {
+    System.out.println("Cat meows");
+  }
 }
 
 class Dog implements Animal {
-    @Override
-    public void sound() {
-        System.out.println("Dog barks");
-    }
+  @Override
+  public void sound() {
+    System.out.println("Dog barks");
+  }
 }
 
 public class Main {
-    public static void main(String[] args) {
-        Animal myCat = new Cat();
-        myCat.sound();  // Outputs: Cat meows
+  public static void main(String[] args) {
+    Animal myCat = new Cat();
+    myCat.sound();  // Outputs: Cat meows
 
-        Animal myDog = new Dog();
-        myDog.sound();  // Outputs: Dog barks
-    }
+    Animal myDog = new Dog();
+    myDog.sound();  // Outputs: Dog barks
+  }
 }
 ```
 
