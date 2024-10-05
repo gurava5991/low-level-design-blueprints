@@ -30,7 +30,28 @@ In her bakery:
 - **Polymorphism:** Enables one method to have different implementations in different contexts. For example, a start() method might work differently for a Car and an ElectricCar, but both use the same interface.
 
 ### Blocks of OOP
-Some content.
+- **Classes And Objects**
+  - **class:** A class in programming is a blueprint or template for creating objects. It defines the properties (attributes) and behaviors (methods) that the objects created from it will have. Think of a class like a recipe that outlines what ingredients (attributes) are needed and what steps (methods) to follow.
+    - ```java
+      // Defining a class named 'Cake'
+class Cake {
+    // Attributes (properties of the class)
+    String flavor;
+    double price;
+
+    // Constructor to initialize the Cake objects
+    public Cake(String flavor, double price) {
+        this.flavor = flavor;
+        this.price = price;
+    }
+
+    // Method (behavior of the class)
+    public void bake() {
+        System.out.println("Baking a " + flavor + " cake.");
+    }
+}
+
+      ```
 
 ### Pillars of OOP
 Some content.
