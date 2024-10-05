@@ -4,7 +4,7 @@
 - [Object-Oriented Programming](#object-oriented-programming)
   - [Components of OOP](#components-of-object-oriented-programming-oop-in-low-level-design-lld)
   - [Blocks of OOP](#blocks-of-oop)
-  - [Pillars of OOP](#Pillars of Object-Oriented Programming)
+  - [Pillars of Object-Oriented Programming](#Pillars of Object-Oriented Programming)
 
 ## Object-Oriented Programming
 Once upon a time, in a bustling city, there was a young girl named Anita who loved to bake. She dreamed of opening her bakery, filled with delicious treats and happy customers. But little did she know, her baking passion would help her understand Object-Oriented Programming (OOP).
