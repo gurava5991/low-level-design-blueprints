@@ -1,7 +1,8 @@
-# low-level-design-blueprints
+# Low-Level Design Blueprints
 
 ## Table of Contents
 - [Object-Oriented Programming](#object-oriented-programming)
+  - [Components of OOP](#components-of-object-oriented-programming-oop-in-low-level-design-lld)
   - [Blocks of OOP](#blocks-of-oop)
   - [Pillars of OOP](#pillars-of-oop)
 
@@ -30,10 +31,12 @@ In her bakery:
 - **Polymorphism:** Enables one method to have different implementations in different contexts. For example, a start() method might work differently for a Car and an ElectricCar, but both use the same interface.
 
 ### Blocks of OOP
-- **Classes And Objects**
-  - **class:** A class in programming is a blueprint or template for creating objects. It defines the properties (attributes) and behaviors (methods) that the objects created from it will have. Think of a class like a recipe that outlines what ingredients (attributes) are needed and what steps (methods) to follow.
-    - ```java
-      // Defining a class named 'Cake'
+- **Classes and Objects:**
+  - **Class:** A class in programming is a blueprint or template for creating objects. It defines the properties (attributes) and behaviors (methods) that the objects created from it will have. Think of a class like a recipe that outlines what ingredients (attributes) are needed and what steps (methods) to follow.
+
+#### Example of a Class in Java:
+```java
+// Defining a class named 'Cake'
 class Cake {
     // Attributes (properties of the class)
     String flavor;
@@ -50,8 +53,3 @@ class Cake {
         System.out.println("Baking a " + flavor + " cake.");
     }
 }
-
-      ```
-
-### Pillars of OOP
-Some content.
