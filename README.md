@@ -59,4 +59,32 @@ class Main{
       Cake c1 = new Cake();//Object creation
   }
 }
+```
+- **Constructors**
+  - **Defination Of Constructor :**  A constructor in object-oriented programming is a special type of method that is automatically called when an object of a class is created. Its primary purpose is to initialize the object's state, i.e., to assign values to the object's attributes (fields).
+  - **Rules of constructors:**
+    **Same Name as Class:** A constructor must have the same name as the class.</br>
+    **No Return Type:** A constructor does not have a return type, not even void.</br>
+    **Automatically Invoked:** Constructors are called automatically when an object is created using the new keyword.</br>
+    **Can Be Overloaded:** A class can have multiple constructors with different parameters (constructor overloading).</br>
+    **Cannot Be Inherited:** Constructors are not inherited by subclasses but can be called using super().</br>
+
+  - **Types of Constructors**
+    - **Default Constructor:**
+    - If no constructor is explicitly defined, Java provides a default constructor.
+    - This constructor takes no parameters and assigns default values to object attributes (like null for objects, 0 for numeric types).
+    - ```java
+          class Car {
+        String model;
+        int year;
+    }
+    
+    public class TestCar {
+        public static void main(String[] args) {
+            Car myCar = new Car();  // Default constructor called
+            System.out.println(myCar.model);  // null
+            System.out.println(myCar.year);   // 0
+        }
+    }
+      ```
 
