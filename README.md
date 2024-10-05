@@ -4,7 +4,7 @@
 - [Object-Oriented Programming](#object-oriented-programming)
   - [Components of OOP](#components-of-object-oriented-programming-oop-in-low-level-design-lld)
   - [Blocks of OOP](#blocks-of-oop)
-  - [Pillars of OOP](#pillars-of-oop)
+  - [Pillars of OOP](#pillars-of-Object-Oriented-Programming)
 
 ## Object-Oriented Programming
 Once upon a time, in a bustling city, there was a young girl named Anita who loved to bake. She dreamed of opening her bakery, filled with delicious treats and happy customers. But little did she know, her baking passion would help her understand Object-Oriented Programming (OOP).
@@ -191,6 +191,200 @@ class Car extends Vehicle {
 ## 5. **Key Points on Constructor Chaining:**
 - The first statement in a constructor must be a call to `this()` (another constructor in the same class) or `super()` (the superclass constructor).
 - Constructor chaining ensures that each level in the class hierarchy is initialized properly.
+
+# Pillars of Object-Oriented Programming (OOP)
+
+Object-Oriented Programming (OOP) is a programming paradigm that relies on the concept of classes and objects. It organizes software design around data, or objects, rather than functions and logic. There are four main pillars of OOP, each contributing to the modularity, reusability, and scalability of the code.
+
+## 1. **Encapsulation**
+
+Encapsulation is the process of wrapping data (variables) and methods (functions) together into a single unit, called a class. It restricts direct access to an object's data and ensures that data can only be modified through well-defined methods.
+
+
+- **Example:**
+```java
+class BankAccount {
+    private double balance;
+
+    // Constructor
+    public BankAccount(double balance) {
+        this.balance = balance;
+    }
+
+    // Public method to deposit money
+    public void deposit(double amount) {
+        if (amount > 0) {
+            balance += amount;
+        }
+    }
+
+    // Public method to get balance
+    public double getBalance() {
+        return balance;
+    }
+}
+```
+
+In this example, the `balance` variable is private and can only be modified through the `deposit` method. This is an example of encapsulation, where the internal state is hidden from direct access.
+
+---
+
+## 2. **Abstraction**
+
+Abstraction refers to the concept of exposing only the necessary parts of an object while hiding the complex internal details. It simplifies the interaction between the user and the object by providing only essential features.
+
+
+- **Example:**
+```java
+abstract class Shape {
+    // Abstract method for calculating area
+    abstract double calculateArea();
+}
+
+class Circle extends Shape {
+    private double radius;
+
+    // Constructor
+    public Circle(double radius) {
+        this.radius = radius;
+    }
+
+    // Implementing abstract method
+    @Override
+    double calculateArea() {
+        return Math.PI * radius * radius;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Shape shape = new Circle(5.0);
+        System.out.println("Area: " + shape.calculateArea());
+    }
+}
+```
+
+In this example, the user interacts with the `Shape` class without worrying about the details of how the area is calculated for different shapes like `Circle`.
+
+---
+
+## 3. **Inheritance**
+
+Inheritance is a mechanism that allows one class to inherit fields and methods from another class. It promotes code reuse by allowing a new class (child class) to inherit properties and behaviors of an existing class (parent class).
+
+- **Example:**
+```java
+class Vehicle {
+    String make;
+    String model;
+
+    public Vehicle(String make, String model) {
+        this.make = make;
+        this.model = model;
+    }
+
+    public void display() {
+        System.out.println("Vehicle: " + make + " " + model);
+    }
+}
+
+class Car extends Vehicle {
+    int year;
+
+    public Car(String make, String model, int year) {
+        super(make, model);  // Call the parent constructor
+        this.year = year;
+    }
+
+    @Override
+    public void display() {
+        super.display();  // Call the parent method
+        System.out.println("Year: " + year);
+    }
+}
+```
+
+In this example, the `Car` class inherits from the `Vehicle` class, reusing its fields and methods.
+
+---
+
+## 4. **Polymorphism**
+
+Polymorphism allows one interface or method to be used for a general class of actions. The specific action is determined by the exact nature of the situation. In Java, polymorphism is implemented through method overloading and method overriding.
+
+- **Example (Method Overriding):**
+```java
+class Animal {
+    public void sound() {
+        System.out.println("Animal makes a sound");
+    }
+}
+
+class Dog extends Animal {
+    @Override
+    public void sound() {
+        System.out.println("Dog barks");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Animal myDog = new Dog();
+        myDog.sound();  // Outputs: Dog barks
+    }
+}
+```
+
+In this example, although the variable is of type `Animal`, it references a `Dog` object, and the `Dog` version of the `sound` method is called. This is an example of polymorphism.
+
+---
+
+## 5. **Interfaces**
+
+An interface in Java is a reference type, similar to a class, that can contain only constants, method signatures, default methods, static methods, and nested types. Interfaces cannot contain instance fields or constructors. A class implements an interface by providing the body of all the methods defined in the interface.
+
+- **Example:**
+```java
+interface Animal {
+    void sound();  // Abstract method
+}
+
+class Cat implements Animal {
+    @Override
+    public void sound() {
+        System.out.println("Cat meows");
+    }
+}
+
+class Dog implements Animal {
+    @Override
+    public void sound() {
+        System.out.println("Dog barks");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Animal myCat = new Cat();
+        myCat.sound();  // Outputs: Cat meows
+
+        Animal myDog = new Dog();
+        myDog.sound();  // Outputs: Dog barks
+    }
+}
+```
+
+In this example, both `Cat` and `Dog` implement the `Animal` interface and provide their own definitions for the `sound` method.
+
+---
+
+## Key Points:
+- **Encapsulation** ensures that the internal implementation of an object is hidden from the outside world.
+- **Abstraction** allows you to focus on what an object does, rather than how it does it.
+- **Inheritance** promotes code reuse and establishes a parent-child relationship between classes.
+- **Polymorphism** allows different classes to be treated as instances of the same class through a common interface, providing flexibility in design.
+- **Interfaces** provide a way to achieve abstraction and multiple inheritance in Java, allowing classes to implement multiple behaviors.
+
 
       
 
