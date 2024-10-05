@@ -74,17 +74,17 @@ class Main{
     - If no constructor is explicitly defined, Java provides a default constructor.
     - This constructor takes no parameters and assigns default values to object attributes (like null for objects, 0 for numeric types).
     - ```java
-          class Car {
-        String model;
-        int year;
+      class Car {
+    String model;
+    int year;
+}
+
+public class TestCar {
+    public static void main(String[] args) {
+        Car myCar = new Car();  // Default constructor called
+        System.out.println(myCar.model);  // null
+        System.out.println(myCar.year);   // 0
     }
-    
-    public class TestCar {
-        public static void main(String[] args) {
-            Car myCar = new Car();  // Default constructor called
-            System.out.println(myCar.model);  // null
-            System.out.println(myCar.year);   // 0
-        }
-    }
+}
       ```
 
