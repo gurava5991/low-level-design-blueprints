@@ -604,10 +604,6 @@ public class BankExample {
 }
 
 ```
-Explanation<br>
-Encapsulation of Fields: accountNumber and balance are private fields, so they can’t be accessed directly from outside the BankAccount class.<br>
-Controlled Access: We provide public getter methods to access accountNumber and balance. However, only controlled methods like deposit and withdraw can modify balance directly.<br>
-Data Validation: The deposit and withdraw methods include validation to ensure only valid amounts are processed, protecting the balance from invalid or unintended modifications.<br>
 ---
 
 ## 2. **Abstraction**
