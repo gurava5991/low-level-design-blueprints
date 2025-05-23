@@ -539,8 +539,71 @@ public class Main {
 
 ```
 
-In this example, the `balance` variable is private and can only be modified through the `deposit` method. This is an example of encapsulation, where the internal state is hidden from direct access.
+```
+public class BankAccount {
+    // Private fields to ensure encapsulation
+    private String accountNumber;
+    private double balance;
 
+    // Constructor to initialize account number and initial balance
+    public BankAccount(String accountNumber, double initialBalance) {
+        this.accountNumber = accountNumber;
+        this.balance = initialBalance;
+    }
+
+    // Getter for account number
+    public String getAccountNumber() {
+        return accountNumber;
+    }
+
+    // Getter for balance (no setter for balance, as it should only change through specific methods)
+    public double getBalance() {
+        return balance;
+    }
+
+    // Method to deposit money
+    public void deposit(double amount) {
+        if (amount > 0) {
+            balance += amount;
+            System.out.println("Deposited: $" + amount);
+        } else {
+            System.out.println("Invalid deposit amount");
+        }
+    }
+
+    // Method to withdraw money
+    public void withdraw(double amount) {
+        if (amount > 0 && amount <= balance) {
+            balance -= amount;
+            System.out.println("Withdrew: $" + amount);
+        } else {
+            System.out.println("Invalid or insufficient funds for withdrawal");
+        }
+    }
+}
+
+public class BankExample {
+    public static void main(String[] args) {
+        // Creating a BankAccount object with an initial balance
+        BankAccount account = new BankAccount("123456789", 1000.0);
+
+        // Display initial balance
+        System.out.println("Account Number: " + account.getAccountNumber());
+        System.out.println("Initial Balance: $" + account.getBalance());
+
+        // Deposit and withdraw operations
+        account.deposit(200.0);
+        System.out.println("Balance after deposit: $" + account.getBalance());
+
+        account.withdraw(150.0);
+        System.out.println("Balance after withdrawal: $" + account.getBalance());
+
+        // Attempting to withdraw an invalid amount
+        account.withdraw(2000.0); // Should print an error message
+    }
+}
+
+```
 ---
 
 ## 2. **Abstraction**
