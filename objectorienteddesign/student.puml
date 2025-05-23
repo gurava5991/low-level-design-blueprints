@@ -1,0 +1,80 @@
+@startuml
+set namespaceSeparator ::
+
+' Entity: Student
+class Student {
+  - id: Long
+  - name: String
+  - email: String
+  + getId(): Long
+  + getName(): String
+  + getEmail(): String
+}
+
+' Entity: Course
+class Course {
+  - id: Long
+  - title: String
+  - description: String
+  - department: Department
+  - instructor: Instructor
+  + getTitle(): String
+  + getInstructor(): Instructor
+}
+
+' Entity: Instructor
+class Instructor {
+  - id: Long
+  - name: String
+  - email: String
+  - department: Department
+  + assignCourse(course: Course): void
+}
+
+' Entity: Department
+class Department {
+  - id: Long
+  - name: String
+  + getCourses(): List<Course>
+  + getInstructors(): List<Instructor>
+}
+
+' Join Entity: Enrollment
+class Enrollment {
+  - id: Long
+  - student: Student
+  - course: Course
+  - enrollmentDate: Date
+  - grade: String
+  + assignGrade(grade: String): void
+}
+
+' Services
+class StudentService {
+  + enrollStudent(student: Student, course: Course): Enrollment
+  + getEnrolledCourses(studentId: Long): List<Course>
+}
+
+class CourseService {
+  + assignInstructor(courseId: Long, instructorId: Long): void
+  + getCourseDetails(courseId: Long): Course
+}
+
+' Relationships
+Student "1" -- "many" Enrollment
+Course "1" -- "many" Enrollment
+Instructor "1" -- "many" Course
+Department "1" -- "many" Course
+Department "1" -- "many" Instructor
+
+Enrollment "many" .. "1" Course
+Enrollment "many" .. "1" Student
+
+StudentService ..> Student
+StudentService ..> Enrollment
+StudentService ..> Course
+
+CourseService ..> Course
+CourseService ..> Instructor
+
+@enduml
