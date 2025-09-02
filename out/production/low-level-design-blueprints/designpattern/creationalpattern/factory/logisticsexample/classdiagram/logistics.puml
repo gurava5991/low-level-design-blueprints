@@ -1,0 +1,40 @@
+@startuml
+
+' Interfaces
+interface Logistics {
+    +deliver(): void
+}
+
+' Main class
+class LogisticsMain {
+    +main(args: String[]): void
+}
+
+' Service layer
+class LogisticService {
+    +processOrder(orderType: String): void
+}
+
+' Factory
+class LogisticsFactory {
+    +getLogistics(type: String): Logistics
+}
+
+' Implementations
+class RoadLogistics implements Logistics {
+    +deliver(): void
+}
+
+class SeaLogistics implements Logistics {
+    +deliver(): void
+}
+
+class AirLogistics implements Logistics {
+    +deliver(): void
+}
+LogisticService --> LogisticsFactory
+LogisticService --> Logistics
+
+LogisticsMain --> LogisticService
+
+@enduml

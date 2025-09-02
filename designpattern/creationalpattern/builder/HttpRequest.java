@@ -64,14 +64,17 @@ public class HttpRequest {
         private String url;
         
         //Optional
-        private String method;
+        private String method = "GET";
         private Map<String, String> headers = new HashMap<>();
         private Map<String, String> queryParams = new HashMap<>();
         private String body;
         private int timeout;
 
-        public Builder(String url) {
+        public Builder() {
+        }
+        public Builder url(String url) {
             this.url = url;
+            return this;
         }
 
         public Builder method(String method) {
